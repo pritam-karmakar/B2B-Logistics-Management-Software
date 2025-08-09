@@ -7,9 +7,9 @@
     
         protected function connect(){
             $this->servername = 'localhost';
-            $this->username = 'u481674619_ltl';
-            $this->password = 'u481674619_Ltl';
-            $this->databasename = 'u481674619_ltl';
+            $this->username = 'root';
+            $this->password = '';
+            $this->databasename = 'b2b_logistics_db';
             $con = new mysqli($this->servername, $this->username, $this->password, $this->databasename);
             return $con;
         }

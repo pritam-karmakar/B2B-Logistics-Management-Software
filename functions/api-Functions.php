@@ -1,7 +1,6 @@
 <?php
 class apiFunctions extends query{
     
-    
     // Generate token Start
     public static function jwtToken($cftType){
         $nQuery = new query();
@@ -55,7 +54,6 @@ class apiFunctions extends query{
     }
     // Generate token End
     
-    
     // Pincode serviceability Start
     public static function pincodeServiceAbility($pincode, $cftType, $jwtValid = null){
         $nQuery = new query();
@@ -87,7 +85,6 @@ class apiFunctions extends query{
         }
     }
     // Pincode serviceability End
-    
     
     // Pincode serviceability with ODA Start
     public static function pincodeServiceAbilityWithOda($pincode, $cftType){
@@ -122,7 +119,6 @@ class apiFunctions extends query{
         }
     }
     // Pincode serviceability with ODA End
-    
     
     // Generate LR start
     public static function generateLR($jobId){
@@ -180,7 +176,6 @@ class apiFunctions extends query{
     }
     // Generate LR end
     
-    
     // Tracking
     public static function Tracking($lRn){
         $nQuery = new query();
@@ -209,7 +204,6 @@ class apiFunctions extends query{
         }
     }
     // End Tracking
-    
     
 }
 
