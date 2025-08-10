@@ -24,7 +24,7 @@ try{
                 "success" => false,
                 "message" => "Unauthorized"
             ), JSON_PRETTY_PRINT);
-            exit; // Exit to prevent further execution
+            exit;
         } else {
             $token = trim(substr($dataHeader['Authorization'], 6));
             if ($token === "25cf28c91ee46c5215fc2afb57d511fcf5474ffa") {
@@ -47,7 +47,7 @@ try{
     // Check if the script is taking longer than 500ms and exit if so
     if ((microtime(true) - $startTime) > 0.5) {
         file_put_contents("tracking-error.log", "Tracking details not inserted due to Error: " . $e->getMessage() . " and it takes more than 500ms on ".date("Y-m-d H:i:s")."\n", FILE_APPEND);
-        exit; // Exit to ensure the script does not run for more than 500 milliseconds
+        exit;
     }
 }catch (Exception $e) {
     file_put_contents("tracking-error.log", "Tracking details not inserted due to Error: " . $e->getMessage() . " on ".date("Y-m-d H:i:s")."\n", FILE_APPEND);
@@ -63,7 +63,6 @@ function asyncInsertTrackingDetails($query, $firstdata) {
     ));
 
     if (!$insQuery) {
-        // Log the failure for further inspection
         file_put_contents("tracking-error.log", "Tracking details not inserted ".$data." on ".date("Y-m-d H:i:s")."\n", FILE_APPEND);
     }else{
         echo json_encode(array(
